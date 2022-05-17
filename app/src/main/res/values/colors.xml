@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--twitter color resource-->
+    <color name="twitter_blue1">#4A98E9</color>
+    <color name="twitter_blue2">#244D76</color>
+    <color name="twitter_blue3">#244D76</color>
+    <color name="twitter_blue4">#87A1B7</color>
+    <color name="twitter_black">#000000</color>
+    <color name="twitter_gray100">#333638</color>
+    <color name="twitter_gray50">#72767A</color>
+    <color name="twitter_gray10">#D9D9D9</color>
+    <color name="twitter_green">#53B781</color>
+    <color name="twitter_white">#FFFFFF</color>
 </resources>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Twitter</string>
+
+    <!--write activity string resource-->
+    <string name="write_et_hint">무슨 일이 일어나고 있나요?</string>
+    <string name="write_tv">모든 사람이 답글을 달 수 있습니다</string>
+    <string name="write_btn">트윗</string>
 </resources>

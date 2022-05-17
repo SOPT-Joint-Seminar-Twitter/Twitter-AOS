@@ -193,10 +193,18 @@
      * **is**: 어떤 것인지 확인한 후 boolean으로 반환하는 동작
      * **has**: 어떤 것을 가지고 있는지 확인한 후 boolean으로 반환하는 동작
 
-5. **variable / value - lowerCamelCase**
+5. **String - snake_case**
+
+   * string 이름은 **snake_case**로 작성
+   * id명은 [where] _ []
+   * 자주 쓰일 것 같은 string 같은 경우는 string _ [] : conflict 최소화를 위해 사용 전, 검색 후 사용
+
+6. **variable / value - lowerCamelCase**
 
    * 변수 이름은 **lowerCamelCase**로 작성
    * 전체 이름의 첫 문자를 소문자로, 나머지 각 단어의 첫 문자는 대문자로 표시
+
+
     </div>
 </details>
 <details>

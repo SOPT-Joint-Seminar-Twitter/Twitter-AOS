@@ -41,17 +41,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_write_input"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="11dp"
+        android:background="@null"
         android:hint="@string/write_et_hint"
         android:paddingVertical="3dp"
-        android:textColorHint="@color/twitter_gray50"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_write_profile"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
-        app:layout_constraintTop_toTopOf="@+id/iv_write_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty" />
 
     <ImageView
         android:id="@+id/iv_write_camera"

@@ -13,7 +13,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/andriod_top_navigation_ic_left_arrow_circle"
+        android:src="@drawable/android_ic_x"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,7 +89,7 @@
         android:layout_width="12dp"
         android:layout_height="12dp"
         android:layout_marginStart="16dp"
-        android:src="@drawable/property_1_android_read_profile_main"
+        android:src="@drawable/android_ic_earth"
         app:layout_constraintBottom_toBottomOf="@+id/tv_write_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_write_text" />

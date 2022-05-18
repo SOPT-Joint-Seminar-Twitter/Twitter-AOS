@@ -1,6 +1,7 @@
 package com.join_seminar.twitter.ui.main
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.join_seminar.twitter.data.TwitData
@@ -16,6 +17,7 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
                executePendingBindings()
            }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TwitViewHolder {
@@ -29,4 +31,6 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
     }
 
     override fun getItemCount(): Int = twitList.size
+
+
 }

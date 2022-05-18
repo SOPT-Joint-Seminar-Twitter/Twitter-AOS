@@ -20,10 +20,17 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
 
         twitAdapter.twitList.addAll(
             listOf(
-                TwitData(R.drawable.property_1_android_read_profile_main, "마먁", "hoho_0518",
-                "0초", "트위터로 글 작성하기~! 안드!💛","","","",true)
+                TwitData(R.drawable.property_1_android_read_profile_main, "마먁", "@hoho_0518",
+                "0초", "트위터로 글 작성하기~! 안드!💛","","","",false),
+                TwitData(R.drawable.android_profile_small_2, "청주여자교도소", "@lesjail",
+                    "1일", "누가 날 깎아내랴도 아 내가 조각이구나 하고 사는 마음가짐 ","3","21.9K","15.5K",true),
+                TwitData(R.drawable.android_profile_small_3, "강리", "@kim_kangri",
+                    "2일", "최근 들은 음악을 영수증 형태의 이미지로\n" +
+                            "만들어주는 웹사이트 Receiptify를\n" +
+                            "발견했는데 제법 귀엽다. ","3","3","3",true)
             )
         )
+
         twitAdapter.notifyDataSetChanged()
     }
 }

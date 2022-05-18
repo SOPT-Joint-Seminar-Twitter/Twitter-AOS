@@ -55,13 +55,15 @@
             android:id="@+id/et_write_input"
             style="@style/EditTextStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="11dp"
             android:background="@null"
+            android:gravity="top"
             android:hint="@string/write_et_hint"
             android:paddingVertical="3dp"
             android:text="@={vm.writeText}"
+            app:layout_constraintBottom_toTopOf="@+id/cl_write_bottom_widget"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
             app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty">
@@ -69,65 +71,65 @@
             <requestFocus />
         </androidx.appcompat.widget.AppCompatEditText>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_write_img_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/dv_write_3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="18dp"
-            app:dividerColor="@color/twitter_gray50"
-            app:layout_constraintBottom_toTopOf="@+id/tv_write_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/iv_write_global"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/android_ic_earth"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_write_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_write_text" />
-
-        <TextView
-            android:id="@+id/tv_write_text"
-            android:layout_width="wrap_content"
-            android:layout_height="17dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="18dp"
-            android:text="@string/write_tv"
-            android:textColor="@color/twitter_blue1"
-            app:layout_constraintBottom_toTopOf="@+id/dv_write_2"
-            app:layout_constraintStart_toEndOf="@+id/iv_write_global" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/dv_write_2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            app:dividerColor="@color/twitter_gray50"
-            app:layout_constraintBottom_toTopOf="@+id/cl_write_bottom_widget"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_write_bottom_widget"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_write_img_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dv_write_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="18dp"
+                app:dividerColor="@color/twitter_gray50"
+                app:layout_constraintBottom_toTopOf="@+id/tv_write_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_write_global"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/android_ic_earth"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_write_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_write_text" />
+
+            <TextView
+                android:id="@+id/tv_write_text"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="18dp"
+                android:text="@string/write_tv"
+                android:textColor="@color/twitter_blue1"
+                app:layout_constraintBottom_toTopOf="@+id/dv_write_2"
+                app:layout_constraintStart_toEndOf="@+id/iv_write_global" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dv_write_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:dividerColor="@color/twitter_gray50"
+                app:layout_constraintBottom_toTopOf="@+id/iv_write_map"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_write_img"
@@ -135,8 +137,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_img"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/iv_write_gif"
@@ -144,8 +145,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_gif"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_write_img"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_write_img" />
 
             <ImageView
                 android:id="@+id/iv_write_chart"
@@ -153,8 +153,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_chart"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_write_gif"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_write_gif" />
 
             <ImageView
                 android:id="@+id/iv_write_map"
@@ -162,8 +161,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_locate"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_write_chart"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_write_chart" />
 
             <ImageView
                 android:id="@+id/iv_write_circle"
@@ -172,8 +170,7 @@
                 android:layout_marginEnd="1dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_value"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/dv_write_1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/dv_write_1" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/dv_write_1"
@@ -192,8 +189,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_small_plus"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

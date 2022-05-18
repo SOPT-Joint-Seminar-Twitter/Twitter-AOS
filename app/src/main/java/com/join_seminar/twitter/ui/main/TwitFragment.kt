@@ -20,7 +20,7 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
 
         twitAdapter.twitList.addAll(
             listOf(
-                TwitData(R.drawable.property_1_android_read_profile_main, "마먁", "@hoho_0518",
+                TwitData(R.drawable.property_1_android_read_profile_main, "마먁", "hoho_0518",
                 "0초", "트위터로 글 작성하기~! 안드!💛","","","",true)
             )
         )

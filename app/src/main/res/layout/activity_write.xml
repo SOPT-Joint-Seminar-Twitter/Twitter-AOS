@@ -66,26 +66,15 @@
             app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
             app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty" />
 
-        <ImageView
-            android:id="@+id/iv_write_camera"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/android_media_bar_ic_camera"
-            app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_write_img_list"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_write_camera"
-            app:layout_constraintStart_toEndOf="@+id/iv_write_camera"
-            app:layout_constraintTop_toTopOf="@+id/iv_write_camera" />
+            app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/dv_write_3"

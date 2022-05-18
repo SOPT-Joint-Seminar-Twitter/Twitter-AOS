@@ -37,6 +37,9 @@ android {
 }
 
 dependencies {
+    // coil
+    implementation "io.coil-kt:coil:2.1.0"
+
     // by viewModels()
     implementation "androidx.fragment:fragment-ktx:1.4.1"
 

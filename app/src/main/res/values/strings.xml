@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Twitter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tap_list">
+        <item>정보</item>
+        <item>트윗</item>
+        <item>트윗과 답글</item>
+        <item>미디어</item>
+        <item>마음에 들어요</item>
+    </string-array>
 </resources>

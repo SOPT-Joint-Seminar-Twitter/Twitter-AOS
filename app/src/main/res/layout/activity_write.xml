@@ -64,7 +64,10 @@
             android:text="@={vm.writeText}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
-            app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_write_back_activty">
+
+            <requestFocus />
+        </androidx.appcompat.widget.AppCompatEditText>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_write_img_list"

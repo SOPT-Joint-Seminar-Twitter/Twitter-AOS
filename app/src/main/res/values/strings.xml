@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Twitter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--홈-->
+    <string name="home_modify_profile">프로필 수정</string>
+    <string name="home_profile_name">먀막</string>
+    <string name="home_profile_nickname">@hoho0518</string>
+    <string name="home_profile_introduction">디자인 / 일상 / 인사이트 / 틈새기록 / 구독계</string>
+    <string name="home_profile_following_num">192</string>
+    <string name="home_profile_following">팔로잉</string>
+    <string name="home_profile_follow_num">6</string>
+    <string name="home_profile_follow">팔로워</string>
 </resources>

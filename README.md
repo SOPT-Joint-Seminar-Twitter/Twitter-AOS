@@ -60,7 +60,7 @@
   * 기본 구조
 
     ```
-    #{issue_number} [TYPE] : subject
+    [TYPE] #{issue_number} - subject
     body(선택사항)
     footer(선택사항)
     ```
@@ -72,7 +72,7 @@
 
     ```
     // 하나의 issue 처리 및 commit
-    #1 [FEAT] : MainActivity BottomNavigation 구현
+    [FEAT] #1 - MainActivity BottomNavigation 구현
     ```
 
     ```
@@ -113,7 +113,7 @@
   * Subject를 작성하고 엔터를 치면 다음 줄로 넘어가고 추가로 설명을 적을 수 있음
 
     ```
-    git commit -m "#{issue_number} [TYPE] : Subject(엔터)
+    git commit -m "[TYPE] #{issue_number} - Subject(엔터)
     Body(부연설명)"
     ```
 

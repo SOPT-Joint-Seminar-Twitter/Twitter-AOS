@@ -22,25 +22,14 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     override fun getItemCount(): Int = twitList.size
 
-    class TwitViewHolder(
-        private val binding: ItemTwitListBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data:TwitData){
-            Glide.with(binding.root)
-                .load(data.image)
-                .circleCrop()
-                .into(binding.ivItemProfile)
-
-            binding.tvItemName.text = data.name
-            binding.tvItemId.text =data.id
-            binding.tvItemTime.text =data.time
-            binding.tvItemContent.text = data.content
-            binding.tvItemReplyNum.text =data.reply
-            binding.tvItemRetwitNum.text = data.retwit
-            binding.tvItemHeartNum.text = data.heart
+    class TwitViewHolder(private val binding: ItemTwitListBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: TwitData) {
+            binding.apply {
+                twit = data
+                executePendingBindings()
             }
-
         }
+    }
 }
 
 

@@ -8,6 +8,7 @@ data class TwitData(
     val content: String,
     val reply : String,
     val retwit : String,
-    val heart : String
+    val heart : String,
+    val isRetwit : Boolean
 )
 

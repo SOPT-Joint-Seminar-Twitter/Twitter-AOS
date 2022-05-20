@@ -8,5 +8,6 @@ object BindingAdapter {
     @JvmStatic
     fun Button.bindIsText(isText: Boolean) {
         isSelected = isText
+        isClickable = !isText
     }
 }

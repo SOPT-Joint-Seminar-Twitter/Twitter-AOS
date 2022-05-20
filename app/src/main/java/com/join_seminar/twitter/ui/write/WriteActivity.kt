@@ -20,6 +20,11 @@ class WriteActivity : AppCompatActivity() {
                     lifecycleOwner = this@WriteActivity
                 }
         initAdapter()
+
+        with(binding) {
+            btnWriteTweet.setOnClickListener { finish() }
+            ivWriteBackActivty.setOnClickListener { finish() }
+        }
     }
 
     private fun initAdapter() {

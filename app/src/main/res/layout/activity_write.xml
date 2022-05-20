@@ -1,9 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.write.WriteActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_mypage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_write_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_write"
+            android:layout_width="56dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/selector_rectangle_blue2_to_blue1"
+            android:fontFamily="@font/roboto_bold"
+            android:text="트윗"
+            android:textColor="@drawable/selector_text_gray_to_white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_write_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_write_delete" />
+
+        <ImageView
+            android:id="@+id/iv_write_profile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/property_1_android_read_profile_main"
+            app:layout_constraintStart_toStartOf="@+id/iv_write_delete"
+            app:layout_constraintTop_toBottomOf="@+id/iv_write_delete" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_write_input"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="top"
+            android:layout_marginTop="11dp"
+            android:hint="무슨 일이 일어나고 있나요?"
+            android:paddingVertical="3dp"
+            android:textColorHint="@color/twitter_gray50"
+            android:background="@null"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cl_write_bottom_widget"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
+            app:layout_constraintTop_toBottomOf="@+id/iv_write_delete"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_write_bottom_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_write_img_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:itemCount="8"
+                tools:listitem="@layout/item_write_img_list"/>
+
+            <View
+                android:id="@+id/dv_write_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="18dp"
+                app:dividerColor="@color/twitter_gray50"
+                app:layout_constraintBottom_toTopOf="@+id/tv_write_earth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_write_earth"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_earth"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_write_earth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_write_earth" />
+
+            <TextView
+                android:id="@+id/tv_write_earth"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="18dp"
+                android:text="@string/write_earth"
+                android:textColor="@color/twitter_blue1"
+                app:layout_constraintBottom_toTopOf="@+id/dv_write_2"
+                app:layout_constraintStart_toEndOf="@+id/iv_write_earth" />
+
+
+            <View
+                android:id="@+id/dv_write_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:dividerColor="@color/twitter_gray50"
+                app:layout_constraintBottom_toTopOf="@+id/iv_write_map"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_write_img"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_write_gif"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_gif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_write_img" />
+
+            <ImageView
+                android:id="@+id/iv_write_chart"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_chart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_write_gif" />
+
+            <ImageView
+                android:id="@+id/iv_write_map"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_locate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_write_chart" />
+
+            <ImageView
+                android:id="@+id/iv_write_circle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_value"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/dv_write_2" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/twitter_gray50"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_write_plus"
+                app:layout_constraintTop_toTopOf="@+id/iv_write_plus" />
+
+            <ImageView
+                android:id="@+id/iv_write_plus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/android_ic_twitter_tap_ic_small_plus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

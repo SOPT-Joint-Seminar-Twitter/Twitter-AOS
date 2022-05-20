@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Twitter" >
         <activity
             android:name=".ui.write.WriteActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".ui.main.HomeActivity"
             android:exported="true" >

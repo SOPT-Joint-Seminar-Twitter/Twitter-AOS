@@ -5,56 +5,49 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.join_seminar.twitter.R
+import com.join_seminar.twitter.databinding.FragmentTwitBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TwitFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TwitFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var twitAdapter: TwitAdapter
+    private var _binding : FragmentTwitBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_twit, container, false)
+        _binding = FragmentTwitBinding.inflate(layoutInflater,container,false)
+
+        binding.rvTwit.addItemDecoration(DividerItemDecoration(context,1)) // 구분선 설정
+        initAdapter()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TwitFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TwitFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun initAdapter() {
+        twitAdapter = TwitAdapter()
+        _binding?.rvTwit?.adapter = twitAdapter
+
+        twitAdapter.twitList.addAll(
+            listOf(
+                TwitData(R.drawable.android_profile_small_1, "마먁", "@hoho_0518",
+                    "0초", "트위터로 글 작성하기~! 안드!","","",""),
+                TwitData(R.drawable.android_profile_small_2, "청주여자교도소", "@lesjail",
+                    "1일", "누가 날 깎아내랴도 아 내가 조각이구나 하고 사는 마음가짐 ","3","21.9K","15.5K"),
+                TwitData(R.drawable.android_profile_small_3, "강리", "@kim_kangri",
+                    "2일", "최근 들은 음악을 영수증 형태의 이미지로\n" +
+                            "만들어주는 웹사이트 Receiptify를\n" +
+                            "발견했는데 제법 귀엽다. ","","","")
+            )
+        )
+
+        twitAdapter.notifyDataSetChanged()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

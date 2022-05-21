@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="twit"
+            type="com.join_seminar.twitter.ui.main.TwitData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/twitter_gray100"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_retwit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="내가 리트윗한 트윗"
+            twitCheck="@{twit.isRetwit}"
+            android:textColor="@color/twitter_gray50"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_item_profile"
+            imageBind="@{twit.image}"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_name"
+            android:src="@drawable/property_1_android_read_profile_main"/>
+
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{twit.name}"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_retwit"
+            tools:text="먀막" />
+
+        <TextView
+            android:id="@+id/tv_item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{twit.id}"
+            android:fontFamily="@font/roboto_regular"
+            tools:text="/@hoho_0518"
+            android:textColor="@color/twitter_gray50"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_name" />
+
+        <TextView
+            android:id="@+id/tv_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="@{twit.time}"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/twitter_gray50"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_id"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_name"
+            tools:text="0초" />
+
+        <TextView
+            android:id="@+id/tv_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@{twit.content}"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_name"
+            tools:text="트위터로 글 작성하기~!" />
+
+        <ImageView
+            android:id="@+id/iv_item_reply"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_comment_24_dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_content" />
+
+        <TextView
+            android:id="@+id/tv_item_reply_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{twit.reply}"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/twitter_gray50"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_reply"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_reply"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_reply"
+            tools:text="3" />
+
+        <ImageView
+            android:id="@+id/iv_item_retwit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/retwit_gray_to_green"
+            twitCheckIcon="@{twit.isRetwit}"
+            android:layout_marginStart="42dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_reply"
+            app:layout_constraintStart_toStartOf="@+id/iv_item_reply"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_reply" />
+
+        <TextView
+            android:id="@+id/tv_item_retwit_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            tools:text="24.9k"
+            android:textColor="@drawable/text_gray_to_green"
+            android:textSize="12sp"
+            android:text="@{twit.retwit}"
+            twitCheckText="@{twit.isRetwit}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_retwit"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_retwit"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_retwit" />
+
+        <ImageView
+            android:id="@+id/iv_item_heart"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="51dp"
+            android:src="@drawable/ic_heart_24_dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_retwit"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_retwit"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_retwit" />
+
+        <TextView
+            android:id="@+id/tv_item_heart_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            tools:text="15.5K"
+            android:text="@{twit.heart}"
+            android:textColor="@color/twitter_gray50"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_heart"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_heart"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_heart" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_share_24_dp"
+            android:layout_marginStart="42dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_heart"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_heart_num"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_heart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

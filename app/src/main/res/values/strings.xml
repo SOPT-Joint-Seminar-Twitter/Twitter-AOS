@@ -5,4 +5,15 @@
     <string name="write_et_hint">무슨 일이 일어나고 있나요?</string>
     <string name="write_tv">모든 사람이 답글을 달 수 있습니다</string>
     <string name="write_btn">트윗</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tap_list">
+        <item>정보</item>
+        <item>트윗</item>
+        <item>트윗과 답글</item>
+        <item>미디어</item>
+        <item>마음에 들어요</item>
+    </string-array>
+
 </resources>

@@ -60,10 +60,8 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
     }
 
     private fun tweetBtnClick() {
-        if(binding.btnWrite.isSelected) {
-            binding.btnWrite.setOnClickListener {
-                finish()
-            }
+        binding.btnWrite.setOnClickListener {
+            finish()
         }
     }
 

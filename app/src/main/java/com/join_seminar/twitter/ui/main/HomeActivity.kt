@@ -1,10 +1,12 @@
 package com.join_seminar.twitter.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayoutMediator
 import com.join_seminar.twitter.R
 import com.join_seminar.twitter.databinding.ActivityHomeBinding
+import com.join_seminar.twitter.ui.write.WriteActivity
 import com.sopt.anroid_hyebin.util.BaseActivity
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
@@ -16,6 +18,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
         initAdapter()
         initTab()
+        initBtnEvent()
 
     }
 
@@ -37,5 +40,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
         }.attach()
     }
 
+    private fun initBtnEvent() {
+        binding.ivHomeBtn.setOnClickListener {
+            val intent = Intent(this, WriteActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
 }

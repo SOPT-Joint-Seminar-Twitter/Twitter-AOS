@@ -1,6 +1,7 @@
 package com.join_seminar.twitter.util
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -13,6 +14,15 @@ object BindingAdapter {
         Glide.with(imageView.context)
             .load(imageUrl)
             .circleCrop()
+            .into(imageView)
+
+    }
+
+    @JvmStatic
+    @BindingAdapter("writeImageBind")
+    fun writeImageBind(imageView: ImageView, imageUrl: Int) {
+        Glide.with(imageView.context)
+            .load(imageUrl)
             .into(imageView)
 
     }

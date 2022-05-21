@@ -12,4 +12,7 @@
     <string name="home_profile_following">팔로잉</string>
     <string name="home_profile_follow_num">6</string>
     <string name="home_profile_follow">팔로워</string>
+
+    <!--write-->
+    <string name="write_earth">모든 사람이 답글을 달 수 있습니다</string>
 </resources>

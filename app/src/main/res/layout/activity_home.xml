@@ -7,7 +7,7 @@
     tools:context=".ui.main.HomeActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/sv_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black">
@@ -102,7 +102,7 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginTop="1dp"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="/@hoho_0518"
+                    android:text=" &#64; hoho_0518"
                     android:textColor="@color/twitter_gray50"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"

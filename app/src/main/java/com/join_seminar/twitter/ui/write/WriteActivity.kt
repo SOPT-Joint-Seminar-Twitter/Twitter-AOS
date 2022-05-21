@@ -20,6 +20,7 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
         super.onCreate(savedInstanceState)
 
         initAdapter()
+
         initWrite()
         tweetBtnClick()
         cancelBtnClick()
@@ -32,8 +33,12 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
         writeAdapter.writeList.addAll(
             listOf(
                 WriteData(R.drawable.android_media_bar_ic_camera),
-                WriteData(R.drawable.property_1_android_read_profile_main),
-                WriteData(R.drawable.andriod_media_3)
+                WriteData(R.drawable.andriod_media_1),
+                WriteData(R.drawable.andriod_media_2),
+                WriteData(R.drawable.andriod_media_3),
+                WriteData(R.drawable.andriod_media_2),
+                WriteData(R.drawable.andriod_media_1)
+
             )
         )
 

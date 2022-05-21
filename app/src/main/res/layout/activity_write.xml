@@ -8,7 +8,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_mypage"
+        android:id="@+id/cl_write"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black">
@@ -74,20 +74,21 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_write_img_list"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toTopOf="@+id/dv_write_3"
+                app:layout_constraintBottom_toTopOf="@+id/view_write"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="8"
-                tools:listitem="@layout/item_write_img_list"/>
+                tools:listitem="@layout/item_write_img_list" />
 
             <View
-                android:id="@+id/dv_write_3"
+                android:id="@+id/view_write"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginBottom="18dp"
@@ -114,12 +115,12 @@
                 android:layout_marginBottom="18dp"
                 android:text="@string/write_earth"
                 android:textColor="@color/twitter_blue1"
-                app:layout_constraintBottom_toTopOf="@+id/dv_write_2"
+                app:layout_constraintBottom_toTopOf="@+id/view_write2"
                 app:layout_constraintStart_toEndOf="@+id/iv_write_earth" />
 
 
             <View
-                android:id="@+id/dv_write_2"
+                android:id="@+id/view_write2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 app:dividerColor="@color/twitter_gray50"
@@ -165,11 +166,11 @@
                 android:layout_height="48dp"
                 android:src="@drawable/android_ic_twitter_tap_ic_value"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/view"
-                app:layout_constraintTop_toBottomOf="@+id/dv_write_2" />
+                app:layout_constraintEnd_toStartOf="@+id/view_write3"
+                app:layout_constraintTop_toBottomOf="@+id/view_write2" />
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/view_write3"
                 android:layout_width="1dp"
                 android:layout_height="0dp"
                 android:background="@color/twitter_gray50"

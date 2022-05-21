@@ -18,6 +18,15 @@ object BindingAdapter {
 
     }
 
+    @JvmStatic
+    @BindingAdapter("writeImageBind")
+    fun writeImageBind(imageView: ImageView, imageUrl: Int) {
+        Glide.with(imageView.context)
+            .load(imageUrl)
+            .into(imageView)
+
+    }
+
     //리트윗 확인 -> textview
     @JvmStatic
     @BindingAdapter("twitCheck")

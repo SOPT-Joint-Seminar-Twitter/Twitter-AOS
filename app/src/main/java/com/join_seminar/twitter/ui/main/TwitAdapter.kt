@@ -3,7 +3,6 @@ package com.join_seminar.twitter.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.join_seminar.twitter.databinding.ItemTwitListBinding
 
 class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
@@ -11,7 +10,8 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TwitViewHolder {
         val binding = ItemTwitListBinding.inflate(
-            LayoutInflater.from(parent.context),parent,false)
+            LayoutInflater.from(parent.context), parent, false
+        )
 
         return TwitViewHolder(binding)
     }
@@ -22,7 +22,8 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     override fun getItemCount(): Int = twitList.size
 
-    class TwitViewHolder(private val binding: ItemTwitListBinding) : RecyclerView.ViewHolder(binding.root) {
+    class TwitViewHolder(private val binding: ItemTwitListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: TwitData) {
             binding.apply {
                 twit = data

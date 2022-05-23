@@ -27,6 +27,7 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
             binding.apply {
                 twit = data
                 executePendingBindings()
+
             }
         }
     }

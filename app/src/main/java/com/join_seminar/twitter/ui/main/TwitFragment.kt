@@ -30,6 +30,8 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
                             "발견했는데 제법 귀엽다. ","3","3","3",true)
             )
         )
+
+
         twitAdapter.notifyDataSetChanged()
     }
 }

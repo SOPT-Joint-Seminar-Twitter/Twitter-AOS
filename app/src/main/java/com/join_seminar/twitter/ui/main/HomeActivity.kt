@@ -1,10 +1,8 @@
 package com.join_seminar.twitter.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.join_seminar.twitter.R
 import com.join_seminar.twitter.databinding.ActivityHomeBinding
@@ -14,6 +12,9 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var tabViewPagerAdapter: TabViewPagerAdapter
+
+    // 통신할 때 이거 사용하면 됌
+    //private val retrofitBuilder = customRetrofit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,6 @@ class HomeActivity : AppCompatActivity() {
 
         tabViewPagerAdapter = TabViewPagerAdapter(this)
         tabViewPagerAdapter.fragments.addAll(fragmentList)
-
         binding.vpHomeTab.adapter = tabViewPagerAdapter
     }
 
@@ -54,6 +54,4 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
 }

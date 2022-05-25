@@ -4,7 +4,9 @@
   <summary><b>gif</b></summary>
 <div markdown="1">
 
-개발완료 후 추가
+|진실(홈)|원용(글쓰기)|혜빈(홈&글쓰기)|
+|---|---|---|
+|![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/69586104/169655780-f58f61c1-1586-42ea-859b-f942cff9114f.gif)|![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/69586104/169655783-907ea9a5-98d9-4d23-9f65-1a6889d1413c.gif)|![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/69586104/169655784-aecc7683-8cd1-4d80-ada6-3cdec628c311.gif)|
 
 </details>
 </div>
@@ -12,6 +14,8 @@
 <details>
   <summary><b>Twitter Android Developer</b></summary>
 <div markdown="1">
+  😎파트장님! 혜빈 코드는 develop branch / 원용, 진실 코드는 main branch에서 확인 가능합니당
+  <br>
 <table align="center" style = "table-layout: auto; width: 100%; table-layout: fixed;">
   <colgroup>
     <col style="width:33%"/>
@@ -60,7 +64,7 @@
   * 기본 구조
 
     ```
-    #{issue_number} [TYPE] : subject
+    [TYPE] #{issue_number} - subject
     body(선택사항)
     footer(선택사항)
     ```
@@ -72,7 +76,7 @@
 
     ```
     // 하나의 issue 처리 및 commit
-    #1 [FEAT] : MainActivity BottomNavigation 구현
+    [FEAT] #1 - MainActivity BottomNavigation 구현
     ```
 
     ```
@@ -113,7 +117,7 @@
   * Subject를 작성하고 엔터를 치면 다음 줄로 넘어가고 추가로 설명을 적을 수 있음
 
     ```
-    git commit -m "#{issue_number} [TYPE] : Subject(엔터)
+    git commit -m "[TYPE] #{issue_number} - Subject(엔터)
     Body(부연설명)"
     ```
 
@@ -212,11 +216,53 @@
 <div markdown="1">
 
 ```
-🐥Twitter🐥
- ┣ 📂ui
+🐥Twitter - Main Branch (원용 & 진실 개발)🐥
+  ┣ 📂ui
+   ┣ 📂base
+     ┣ 📂BaseActivity
+     ┗ 📂BaseFragment
+   ┣ 📂main
+     ┣ 📂FanccyFragment
+     ┣ 📂HomeActivity
+     ┣ 📂InfoFragment
+     ┣ 📂MediaFragment
+     ┣ 📂ReplyFragment
+     ┣ 📂TabViewPaterAdapter
+     ┣ 📂TwitAdapter
+     ┣ 📂TwitData
+     ┗ 📂TwitFragment
    ┣ 📂write
-   ┗ 📂main
-(개발 후 추가 작성 예정)
+     ┣ 📂WriteActivity
+     ┣ 📂WriteAdatper
+     ┗ 📂WriteViewModel
+   ┗ 📂util
+     ┗ 📂BindingAdapter
+
+
+🐥Twitter - Develop Branch (혜빈 개발)🐥
+  ┣ 📂data
+   ┣ 📂TwitData
+   ┗ 📂WriteData
+  ┣ 📂ui
+   ┣ 📂base
+     ┣ 📂BaseActivity
+     ┗ 📂BaseFragment
+   ┣ 📂main
+     ┣ 📂adapter
+      ┣ 📂HomeTabAdapter
+      ┗ 📂TwitAdapter
+     ┣ 📂HomeActivity
+     ┣ 📂InfoFragment
+     ┣ 📂MediaFragment
+     ┣ 📂MindFragment
+     ┣ 📂ReplyFragment
+     ┗ 📂TwitFragment
+   ┣ 📂write
+     ┣ 📂adapter
+      ┗ 📂WriteAdatper
+     ┗ 📂WriteActivity
+   ┗ 📂util
+     ┗ 📂BindingAdapter
 ```
   </div>
 </details>

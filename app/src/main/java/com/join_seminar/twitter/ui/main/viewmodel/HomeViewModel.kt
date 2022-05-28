@@ -15,6 +15,7 @@ class HomeViewModel() : ViewModel() {
     val userInfo: LiveData<ResponseUserInfoData>
         get() = _userInfo
 
+    //user info 서버 통신
     fun getUserInfo() {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.apiService.getUserInfo() }

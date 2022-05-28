@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ServiceCreator {
     private const val BASE_URL = "http://52.79.233.160:8000/"
 
+    //userId 고정값 1
     val userId = 1
 
     private val retrofit : Retrofit = Retrofit.Builder()
@@ -23,6 +24,7 @@ object ServiceCreator {
         build()
     }
 
+    //okhttp3 interceptor를 통한 헤더 추가
     class AppInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
             val newRequest = request().newBuilder()

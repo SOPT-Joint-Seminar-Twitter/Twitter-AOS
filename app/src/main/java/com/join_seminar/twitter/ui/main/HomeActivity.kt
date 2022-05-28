@@ -2,16 +2,22 @@ package com.join_seminar.twitter.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
 import com.join_seminar.twitter.R
+import com.join_seminar.twitter.data.api.ApiService
+import com.join_seminar.twitter.data.api.ServiceCreator
 import com.join_seminar.twitter.databinding.ActivityHomeBinding
 import com.join_seminar.twitter.ui.main.adapter.HomeTabAdapter
+import com.join_seminar.twitter.ui.main.viewmodel.HomeViewModel
 import com.join_seminar.twitter.ui.write.WriteActivity
 import com.sopt.anroid_hyebin.util.BaseActivity
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
     private lateinit var homeTabAdapter: HomeTabAdapter
+    private val homeViewModel : HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +25,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
         initAdapter()
         initTab()
         initBtnEvent()
+        initNetwork()
 
     }
 
@@ -31,6 +38,13 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
         binding.vpHome.adapter = homeTabAdapter
 
+    }
+
+    private fun initNetwork() {
+        homeViewModel.getUserInfo()
+        homeViewModel.userInfo.observe(this){
+            binding.user = it.data
+        }
     }
 
     private fun initTab(){

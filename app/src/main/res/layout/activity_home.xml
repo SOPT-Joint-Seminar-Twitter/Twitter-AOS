@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="user"
+            type="com.join_seminar.twitter.data.response.ResponseUserInfoData.Data" />
 
     </data>
 
@@ -96,22 +99,24 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="@string/home_profile_name"
+                    android:text="@{user.userName}"
                     android:textColor="@color/white"
                     android:textSize="22sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:text="@string/home_profile_name" />
 
                 <TextView
                     android:id="@+id/tv_home_main_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="@string/home_profile_nickname"
+                    android:text="@{user.userId}"
                     android:textColor="@color/twitter_gray50"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@+id/tv_home_main_name"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_home_main_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_home_main_name"
+                    tools:text="@string/home_profile_nickname" />
 
                 <TextView
                     android:id="@+id/tv_home_main_description"
@@ -119,11 +124,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="@string/home_profile_introduction"
+                    android:text="@{user.introduce}"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@+id/tv_home_main_nickname"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_home_main_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_home_main_name"
+                    tools:text="@string/home_profile_introduction" />
 
                 <TextView
                     android:id="@+id/tv_home_main_following_num"
@@ -215,9 +221,9 @@
             android:id="@+id/iv_home_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/android_btn"
-            android:layout_marginBottom="17dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="17dp"
+            android:src="@drawable/android_btn"
             app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

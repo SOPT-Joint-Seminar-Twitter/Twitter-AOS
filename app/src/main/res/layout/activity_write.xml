@@ -47,12 +47,13 @@
             app:layout_constraintStart_toStartOf="@+id/iv_write_delete"
             app:layout_constraintTop_toBottomOf="@+id/iv_write_delete" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <EditText
             android:id="@+id/et_write_input"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="12dp"
             android:gravity="top"
+            android:inputType="textPersonName"
             android:layout_marginTop="11dp"
             android:hint="무슨 일이 일어나고 있나요?"
             android:paddingVertical="3dp"
@@ -62,7 +63,7 @@
             app:layout_constraintBottom_toTopOf="@+id/cl_write_bottom_widget"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_write_profile"
-            app:layout_constraintTop_toBottomOf="@+id/iv_write_delete"/>
+            app:layout_constraintTop_toBottomOf="@+id/iv_write_delete" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_write_bottom_widget"

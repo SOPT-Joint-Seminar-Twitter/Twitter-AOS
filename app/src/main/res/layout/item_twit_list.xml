@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="twit"
-            type="com.join_seminar.twitter.data.TwitData" />
+            type="com.join_seminar.twitter.data.response.ResponseTwitList.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +23,7 @@
 
         <TextView
             android:id="@+id/tv_home_retwit_main"
+            twitCheck="@{twit.isRetwit}"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginTop="8dp"
@@ -29,30 +31,28 @@
             android:text="내가 리트윗한 트윗"
             android:textColor="@color/twitter_gray50"
             android:textSize="14sp"
-            twitCheck="@{twit.isRetwit}"
             app:layout_constraintStart_toStartOf="@+id/tv_home_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_home_img"
-            imageBind="@{twit.image}"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="10dp"
+            android:src="@drawable/property_1_android_read_profile_main"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_name"
-            tools:src="@drawable/property_1_android_read_profile_main" />
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name" />
 
         <TextView
             android:id="@+id/tv_home_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="@{twit.name}"
+            android:text="@{twit.Writer.userName}"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/iv_home_img"
             app:layout_constraintTop_toBottomOf="@+id/tv_home_retwit_main"
             tools:text="먀막" />
@@ -63,13 +63,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="@{twit.nickname}"
+            android:text="hoho_0518"
             android:textColor="@color/twitter_gray50"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_home_name"
             app:layout_constraintStart_toEndOf="@+id/tv_home_name"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_name"
-            tools:text="hoho_0518" />
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name" />
 
         <TextView
             android:id="@+id/tv_home_time"
@@ -77,13 +76,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="@{twit.time}"
+            android:text="0초"
             android:textColor="@color/twitter_gray50"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_home_name"
             app:layout_constraintStart_toEndOf="@+id/tv_home_nickname"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_name"
-            tools:text="0초" />
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name" />
 
         <TextView
             android:id="@+id/tv_home_content"
@@ -119,9 +117,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
+            intToText="@{twit.likeCount}"
             android:textColor="#72767a"
             android:textSize="12dp"
-            android:text="@{twit.comment}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_home_comment"
             app:layout_constraintStart_toEndOf="@+id/iv_home_comment"
             app:layout_constraintTop_toTopOf="@+id/iv_home_comment"
@@ -129,12 +127,12 @@
 
         <ImageView
             android:id="@+id/iv_home_retwit"
+            twitCheckIcon="@{twit.isRetwit}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/selector_retwit_gray_to_green"
-            twitCheckIcon="@{twit.isRetwit}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_home_comment"
             app:layout_constraintStart_toStartOf="@+id/tv_home_comment"
             app:layout_constraintTop_toBottomOf="@+id/tv_home_content" />
@@ -142,13 +140,13 @@
 
         <TextView
             android:id="@+id/tv_home_retwit"
+            twitCheckText="@{twit.isRetwit}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
+            intToText="@{twit.likeCount}"
             android:textColor="@drawable/selector_text_gray_to_green"
             android:textSize="12dp"
-            android:text="@{twit.retwit}"
-            twitCheckText="@{twit.isRetwit}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_home_comment"
             app:layout_constraintStart_toEndOf="@+id/iv_home_retwit"
             app:layout_constraintTop_toTopOf="@+id/iv_home_comment"
@@ -171,9 +169,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
+            intToText="@{twit.likeCount}"
             android:textColor="#72767a"
             android:textSize="12dp"
-            android:text="@{twit.heart}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_home_comment"
             app:layout_constraintStart_toEndOf="@+id/iv_home_heart"
             app:layout_constraintTop_toTopOf="@+id/iv_home_comment"

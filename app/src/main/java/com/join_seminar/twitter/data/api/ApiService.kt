@@ -1,6 +1,7 @@
 package com.join_seminar.twitter.data.api
 
 import com.join_seminar.twitter.data.request.RequestWriteTwit
+import com.join_seminar.twitter.data.response.ResponseTwitList
 import com.join_seminar.twitter.data.response.ResponseUserInfoData
 import com.join_seminar.twitter.data.response.ResponseWriteTwit
 import retrofit2.http.Body
@@ -18,4 +19,8 @@ interface ApiService {
     suspend fun postWriteTwit(
         @Body requestWriteTwit: RequestWriteTwit
     ) : ResponseWriteTwit
+
+    @GET("/twit")
+    suspend fun getTwitList() : ResponseTwitList
+
 }

@@ -51,4 +51,11 @@ object BindingAdapter {
     fun twitCheckText(textView: TextView, twit: Boolean) {
         textView.isSelected = twit
     }
+
+    //int -> String
+    @JvmStatic
+    @BindingAdapter("intToText")
+    fun getIntToText(textView: TextView, int: Int): String {
+        return int.toString().also { textView.text = it }
+    }
 }

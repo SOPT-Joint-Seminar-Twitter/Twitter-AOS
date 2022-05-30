@@ -62,11 +62,8 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
     }
 
     private fun tweetBtnClick() {
-        twitViewModel.requestTwit.content = binding.etWriteInput.text.toString()
-        Log.d("Test", binding.etWriteInput.text.toString())
-        Log.d("Test2", twitViewModel.requestTwit.writer.toString())
-        val userId = "111"
         binding.btnWrite.setOnClickListener {
+            twitViewModel.requestTwit.content = binding.etWriteInput.text.toString()
             twitViewModel.postTwit(RequestWriteTwit(twitViewModel.requestTwit.content,twitViewModel.requestTwit.writer))
             finish()
         }
@@ -77,10 +74,4 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
             finish()
         }
     }
-
-    private fun postNetwork() {
-
-
-    }
-
 }

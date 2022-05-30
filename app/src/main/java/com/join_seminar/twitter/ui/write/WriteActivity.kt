@@ -1,16 +1,25 @@
 package com.join_seminar.twitter.ui.write
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import com.join_seminar.twitter.R
 import com.join_seminar.twitter.databinding.ActivityWriteBinding
+import com.join_seminar.twitter.ui.App
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class WriteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWriteBinding
     private lateinit var writeAdapter: WriteAdapter
-    private val viewModel: WriteViewModel by viewModels()
+    private val viewModel: WriteViewModel by viewModels {
+        WriteViewModelFactory((application as App).repository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
@@ -18,19 +27,25 @@ class WriteActivity : AppCompatActivity() {
                 .apply {
                     vm = viewModel
                     lifecycleOwner = this@WriteActivity
+                    btnWriteTweet.setOnClickListener { finish() }
                 }
         initAdapter()
 
-        with(binding) {
-            btnWriteTweet.setOnClickListener { finish() }
-            ivWriteBackActivty.setOnClickListener { finish() }
-        }
+        viewModel.eventFlow
+            .flowWithLifecycle(lifecycle)
+            .onEach(this::handleEvent)
+            .launchIn(lifecycleScope)
     }
 
     private fun initAdapter() {
         writeAdapter = WriteAdapter()
         binding.rvWriteImgList.adapter = writeAdapter
         writeAdapter.submitList(photoList)
+    }
+
+    private fun handleEvent(event: Event) = when (event) {
+        is Event.IsFinish -> finish()
+        is Event.ShowToast -> Toast.makeText(this, "통신 실패", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

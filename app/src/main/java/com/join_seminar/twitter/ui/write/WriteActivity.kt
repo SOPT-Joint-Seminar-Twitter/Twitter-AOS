@@ -1,20 +1,22 @@
 package com.join_seminar.twitter.ui.write
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
+import androidx.activity.viewModels
 import com.join_seminar.twitter.R
-import com.join_seminar.twitter.data.TwitData
 import com.join_seminar.twitter.data.WriteData
+import com.join_seminar.twitter.data.request.RequestWriteTwit
 import com.join_seminar.twitter.databinding.ActivityWriteBinding
-import com.join_seminar.twitter.ui.main.adapter.TwitAdapter
 import com.join_seminar.twitter.ui.write.adapter.WriteAdapter
+import com.join_seminar.twitter.ui.write.viewmodel.TwitViewModel
 import com.sopt.anroid_hyebin.util.BaseActivity
 
 class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write) {
 
     private lateinit var writeAdapter: WriteAdapter
+    private val twitViewModel: TwitViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +62,12 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
     }
 
     private fun tweetBtnClick() {
+        twitViewModel.requestTwit.content = binding.etWriteInput.text.toString()
+        Log.d("Test", binding.etWriteInput.text.toString())
+        Log.d("Test2", twitViewModel.requestTwit.writer.toString())
+        val userId = "111"
         binding.btnWrite.setOnClickListener {
+            twitViewModel.postTwit(RequestWriteTwit(twitViewModel.requestTwit.content,twitViewModel.requestTwit.writer))
             finish()
         }
     }
@@ -69,6 +76,11 @@ class WriteActivity : BaseActivity<ActivityWriteBinding>(R.layout.activity_write
         binding.ivWriteDelete.setOnClickListener {
             finish()
         }
+    }
+
+    private fun postNetwork() {
+
+
     }
 
 }

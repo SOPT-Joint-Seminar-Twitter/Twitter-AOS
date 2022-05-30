@@ -31,8 +31,8 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
         }
     }
 
-    fun setQuestionPost(myPagePostData: MutableList<ResponseTwitList.Data>) {
-        this.twitList = myPagePostData
+    fun setQuestionPost(data: MutableList<ResponseTwitList.Data>) {
+        this.twitList = data
         notifyDataSetChanged()
 
     }

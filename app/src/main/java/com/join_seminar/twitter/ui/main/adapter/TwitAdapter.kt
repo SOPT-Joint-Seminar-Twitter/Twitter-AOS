@@ -2,10 +2,12 @@ package com.join_seminar.twitter.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.join_seminar.twitter.data.TwitData
 import com.join_seminar.twitter.data.response.ResponseTwitList
 import com.join_seminar.twitter.databinding.ItemTwitListBinding
+import com.join_seminar.twitter.ui.main.viewmodel.HomeViewModel
 
 class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
     var twitList = mutableListOf<ResponseTwitList.Data>()
@@ -18,6 +20,9 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     override fun onBindViewHolder(holder: TwitViewHolder, position: Int) {
         holder.onBind(twitList[position])
+        holder.binding.ivHomeHeart.setOnClickListener {
+
+        }
     }
 
     override fun getItemCount(): Int = twitList.size
@@ -34,6 +39,10 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
     fun setQuestionPost(data: MutableList<ResponseTwitList.Data>) {
         this.twitList = data
         notifyDataSetChanged()
+
+    }
+
+    private fun heartNetwork() {
 
     }
 }

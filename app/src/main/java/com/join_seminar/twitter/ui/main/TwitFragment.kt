@@ -25,10 +25,13 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
     private fun initAdapter() {
         twitAdapter = TwitAdapter()
         binding.rvFollower.adapter = twitAdapter
+
         homeViewModel.getTwitList()
         homeViewModel.twitList.observe(viewLifecycleOwner) {
             twitAdapter.setQuestionPost((it.data) as MutableList<ResponseTwitList.Data>)
         }
+
+
 
 
         /*

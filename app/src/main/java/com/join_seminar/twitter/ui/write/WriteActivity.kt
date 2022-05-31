@@ -27,7 +27,6 @@ class WriteActivity : AppCompatActivity() {
                 .apply {
                     vm = viewModel
                     lifecycleOwner = this@WriteActivity
-                    btnWriteTweet.setOnClickListener { finish() }
                 }
         initAdapter()
 

@@ -35,7 +35,7 @@
             android:layout_marginEnd="10dp"
             android:background="@drawable/write_button_selector"
             android:fontFamily="@font/roboto_bold"
-            android:onClick="@{()->vm.twit(vm.writeText)}"
+            android:onClick="@{()->vm.twit()}"
             android:text="@string/write_btn"
             android:textColor="@{vm.writeText.isEmpty() ? @color/twitter_blue4 : @color/twitter_white}"
             android:textSize="14sp"

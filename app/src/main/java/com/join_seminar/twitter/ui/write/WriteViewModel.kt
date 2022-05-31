@@ -17,9 +17,9 @@ class WriteViewModel constructor(
     val writeText: MutableStateFlow<String> = MutableStateFlow("")
     val eventFlow = _eventFlow.asSharedFlow()
 
-    fun twit(content: String) {
+    fun twit() {
         viewModelScope.launch {
-            writeRepository.twit(content)
+            writeRepository.twit(writeText.value)
                 .onSuccess {
                     Log.d("WriteViewModel", "success ${it.message}")
                     exit()

@@ -2,11 +2,16 @@ package com.join_seminar.twitter.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.join_seminar.twitter.R
 import com.join_seminar.twitter.databinding.ActivityHomeBinding
+import com.join_seminar.twitter.ui.data.RetrofitBuilder
+import com.join_seminar.twitter.ui.data.enqueueUtil
+import com.join_seminar.twitter.ui.data.response.ResponseUserInfoData
 import com.join_seminar.twitter.ui.write.WriteActivity
+import retrofit2.Call
 
 class HomeActivity : AppCompatActivity() {
 
@@ -24,6 +29,7 @@ class HomeActivity : AppCompatActivity() {
         initAdapter()
         initTabLayout()
         writeTwit()
+        userInfoNetwork()
     }
 
     private fun initAdapter() {
@@ -53,5 +59,20 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, WriteActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun userInfoNetwork(){
+        val call: Call<ResponseUserInfoData> = RetrofitBuilder.customRetrofit.getUserInfo("먀막")
+
+        call.enqueueUtil(
+            onSuccess = {
+                binding.user = it.data
+                Log.d("userInfoNetwork", "서버 통신 성공")
+            },
+            onError = {
+                Log.d("userInfoNetwork", "서버 통신 실패")
+            }
+        )
+
     }
 }

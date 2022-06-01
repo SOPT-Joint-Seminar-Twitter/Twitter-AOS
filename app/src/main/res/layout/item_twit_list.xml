@@ -7,7 +7,7 @@
     <data>
         <variable
             name="twit"
-            type="com.join_seminar.twitter.ui.main.TwitData" />
+            type="com.join_seminar.twitter.ui.data.response.ResponseTwitList.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +36,6 @@
 
         <ImageView
             android:id="@+id/iv_item_profile"
-            imageBind="@{twit.image}"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="10dp"
@@ -49,7 +48,7 @@
             android:id="@+id/tv_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{twit.name}"
+            android:text="@{twit.Writer.userName}"
             android:layout_marginStart="68dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_medium"
@@ -64,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="@{twit.id}"
+            android:text="@{twit.Writer.userId}"
             android:fontFamily="@font/roboto_regular"
             tools:text="/@hoho_0518"
             android:textColor="@color/twitter_gray50"
@@ -77,14 +76,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:text="@{twit.time}"
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/twitter_gray50"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_item_name"
             app:layout_constraintStart_toEndOf="@+id/tv_item_id"
             app:layout_constraintTop_toTopOf="@+id/tv_item_name"
-            tools:text="0초" />
+            android:text="0초" />
 
         <TextView
             android:id="@+id/tv_item_content"
@@ -111,16 +109,15 @@
 
         <TextView
             android:id="@+id/tv_item_reply_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{twit.reply}"
+            android:layout_width="7dp"
+            android:layout_height="13dp"
             android:fontFamily="@font/roboto_light"
             android:textColor="@color/twitter_gray50"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_item_reply"
             app:layout_constraintStart_toEndOf="@+id/iv_item_reply"
             app:layout_constraintTop_toTopOf="@+id/iv_item_reply"
-            tools:text="3" />
+            android:text="3" />
 
         <ImageView
             android:id="@+id/iv_item_retwit"
@@ -141,7 +138,7 @@
             tools:text="24.9k"
             android:textColor="@drawable/text_gray_to_green"
             android:textSize="12sp"
-            android:text="@{twit.retwit}"
+            android:text="@{twit.likeCount}"
             twitCheckText="@{twit.isRetwit}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_item_retwit"
             app:layout_constraintStart_toEndOf="@+id/iv_item_retwit"
@@ -163,7 +160,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             tools:text="15.5K"
-            android:text="@{twit.heart}"
+            android:text="@{twit.likeCount}"
             android:textColor="@color/twitter_gray50"
             android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_item_heart"

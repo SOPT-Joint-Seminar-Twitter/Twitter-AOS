@@ -4,14 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.join_seminar.twitter.databinding.ItemTwitListBinding
+import com.join_seminar.twitter.ui.data.response.ResponseTwitList
+import okhttp3.internal.notifyAll
 
 class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
-    var twitList = mutableListOf<TwitData>()
+    var twitList = mutableListOf<ResponseTwitList.Data>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TwitViewHolder {
         val binding = ItemTwitListBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        )
+            LayoutInflater.from(parent.context), parent, false)
 
         return TwitViewHolder(binding)
     }
@@ -22,13 +23,14 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     override fun getItemCount(): Int = twitList.size
 
-    class TwitViewHolder(private val binding: ItemTwitListBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: TwitData) {
-            binding.apply {
-                twit = data
-                executePendingBindings()
-            }
+    class TwitViewHolder(
+        private val binding: ItemTwitListBinding
+        ) : RecyclerView.ViewHolder(binding.root) {
+            fun onBind(data: ResponseTwitList.Data) {
+                binding.apply {
+                    twit = data
+                    executePendingBindings()
+                }
         }
     }
 }

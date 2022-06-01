@@ -73,6 +73,5 @@ class HomeActivity : AppCompatActivity() {
                 Log.d("userInfoNetwork", "서버 통신 실패")
             }
         )
-
     }
 }

@@ -61,12 +61,22 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
 //        val requestHeart = RequestHeart(
 //            postId =
 //        )
-        // postId 값을 어떻게 보내줄지,,
-
+//
 //        val call: Call<ResponseHeart> = RetrofitBuilder.customRetrofit.postHeart(requestHeart)
 //
 //        call.enqueueUtil(
 //            onSuccess = {
+//                val data = it.data
+//                //좋아요 수랑 true/false 값
+//                twitAdapter = TwitAdapter()
+//                binding.rvTwit.adapter = twitAdapter
+//                twitAdapter.setOnItemClickListener(object : TwitAdapter.onItemClickListener{
+//                    override fun onItemClick(likeNum: Int,isLike : Boolean) {
+//
+//                    }
+//                })
+//
+//
 //                Log.d("heartNetwork", "좋아요 통신 성공")
 //
 //            },

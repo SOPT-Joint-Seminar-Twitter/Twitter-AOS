@@ -29,7 +29,7 @@ interface ApiService {
     //좋아요
     @POST("/like/{postId}")
     suspend fun postLike(
-        @Path("postId") postId : Int
+        @Path("postId") postId : String
     ) : ResponseLike
 
 }

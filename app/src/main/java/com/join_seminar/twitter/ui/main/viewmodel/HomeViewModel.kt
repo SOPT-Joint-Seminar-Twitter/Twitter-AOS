@@ -28,6 +28,9 @@ class HomeViewModel() : ViewModel() {
     val twitLike: LiveData<ResponseLike>
         get() = _twitlike
 
+    private val _twitData = MutableLiveData<List<ResponseTwitList.Data>>()
+    val twitData : LiveData<List<ResponseTwitList.Data>>
+    get() = _twitData
 
     //user info 서버 통신
     fun getUserInfo() {
@@ -60,7 +63,7 @@ class HomeViewModel() : ViewModel() {
     }
 
     //좋아요 서버통신
-    fun postLike(type: Int) {
+    fun postLike(type: String) {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.apiService.postLike(type) }
                 .onSuccess {

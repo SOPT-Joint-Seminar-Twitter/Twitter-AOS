@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="hoho_0518"
+            android:text="@{twit.Writer.userId}"
             android:textColor="@color/twitter_gray50"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_home_name"

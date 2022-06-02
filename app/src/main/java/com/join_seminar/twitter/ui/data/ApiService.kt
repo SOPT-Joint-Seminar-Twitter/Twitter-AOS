@@ -7,10 +7,10 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
-    @GET ("/users/{userName}")
-    fun getUserInfo(@Path("userName")userName:String): Call<ResponseUserInfoData>
+    @GET ("/user")
+    fun getUserInfo(): Call<ResponseUserInfoData>
 
-    @GET("/twit/{userName}")
-    fun getTwitList(): Call<List<ResponseTwitList>>
+    @GET("/twit")
+    fun getTwitList(): Call<ResponseTwitList>
 }
 

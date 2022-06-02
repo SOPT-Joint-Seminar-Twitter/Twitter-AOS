@@ -1,5 +1,6 @@
 package com.join_seminar.twitter.ui.main
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -62,14 +63,16 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun userInfoNetwork(){
-        val call: Call<ResponseUserInfoData> = RetrofitBuilder.customRetrofit.getUserInfo("먀막")
+        val call: Call<ResponseUserInfoData> = RetrofitBuilder.customRetrofit.getUserInfo()
 
         call.enqueueUtil(
             onSuccess = {
                 binding.user = it.data
+                Log.d(TAG, "loginNetwork: ${binding.tvHomeProfileName.text}, ${binding.tvHomeProfileId}")
                 Log.d("userInfoNetwork", "서버 통신 성공")
             },
             onError = {
+                Log.d(TAG, "userInfoNetwork: ${binding.tvHomeProfileName.text}, ${binding.tvHomeProfileId}")
                 Log.d("userInfoNetwork", "서버 통신 실패")
             }
         )

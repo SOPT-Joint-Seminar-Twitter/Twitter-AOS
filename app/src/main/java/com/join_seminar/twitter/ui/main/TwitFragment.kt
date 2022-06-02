@@ -21,7 +21,7 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
 
     private fun twitLisNetWork() {
 
-        val call: Call<List<ResponseTwitList>> = RetrofitBuilder.customRetrofit.getTwitList()
+        val call: Call<ResponseTwitList> = RetrofitBuilder.customRetrofit.getTwitList()
 
         call.enqueueUtil(
             onSuccess = {
@@ -30,7 +30,7 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
                 binding.rvTwit.adapter = twitAdapter
 
                 if (data != null) {
-//                    twitAdapter.twitList = data.toMutableList()
+//                    twitAdapter.twitList = data
                 }
                 twitAdapter.notifyDataSetChanged()
 

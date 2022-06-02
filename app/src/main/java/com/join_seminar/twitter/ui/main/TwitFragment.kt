@@ -8,6 +8,8 @@ import com.join_seminar.twitter.databinding.FragmentTwitBinding
 import com.join_seminar.twitter.ui.base.BaseFragment
 import com.join_seminar.twitter.ui.data.RetrofitBuilder
 import com.join_seminar.twitter.ui.data.enqueueUtil
+import com.join_seminar.twitter.ui.data.request.RequestHeart
+import com.join_seminar.twitter.ui.data.response.ResponseHeart
 import com.join_seminar.twitter.ui.data.response.ResponseTwitList
 import retrofit2.Call
 
@@ -53,5 +55,27 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
 //                            "발견했는데 제법 귀엽다. ","3","3","3",true)
 //            )
 //        )
+    }
+
+    private fun heartNetwork(){
+//        val requestHeart = RequestHeart(
+//            postId =
+//        )
+        // postId 값을 어떻게 보내줄지,,
+
+//        val call: Call<ResponseHeart> = RetrofitBuilder.customRetrofit.postHeart(requestHeart)
+//
+//        call.enqueueUtil(
+//            onSuccess = {
+//                Log.d("heartNetwork", "좋아요 통신 성공")
+//
+//            },
+//            onError = {
+//                Log.d("heartNetwork", "좋아요 통신 실패")
+//
+//            }
+//        )
+
+
     }
 }

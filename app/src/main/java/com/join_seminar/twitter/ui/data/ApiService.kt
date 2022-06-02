@@ -1,10 +1,13 @@
 package com.join_seminar.twitter.ui.data
 
+import com.join_seminar.twitter.ui.data.request.RequestHeart
+import com.join_seminar.twitter.ui.data.response.ResponseHeart
 import com.join_seminar.twitter.ui.data.response.ResponseTwitList
 import com.join_seminar.twitter.ui.data.response.ResponseUserInfoData
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.POST
 
 interface ApiService {
     @GET ("/user")
@@ -12,5 +15,8 @@ interface ApiService {
 
     @GET("/twit")
     fun getTwitList(): Call<ResponseTwitList>
+
+    @POST("/like/:postId")
+    fun postHeart(@Body body :RequestHeart): Call<ResponseHeart>
 }
 

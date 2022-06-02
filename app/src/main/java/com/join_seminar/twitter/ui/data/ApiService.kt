@@ -1,5 +1,6 @@
 package com.join_seminar.twitter.ui.data
 
+
 import com.join_seminar.twitter.ui.data.request.RequestHeart
 import com.join_seminar.twitter.ui.data.response.ResponseHeart
 import com.join_seminar.twitter.ui.data.response.ResponseTwitList
@@ -19,5 +20,15 @@ interface ApiService {
 
     @POST("/like/{postId}")
     fun postHeart(@Path("postId") postId:String): Call<ResponseHeart>
+  
+    @POST("/twit")
+    suspend fun twit(
+        @Body writeRequest: WriteRequest
+    ): WrapperClass<Any>
+    @GET ("/user")
+    fun getUserInfo(): Call<ResponseUserInfoData>
+  
 }
+
+
 

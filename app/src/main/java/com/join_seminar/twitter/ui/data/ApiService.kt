@@ -1,10 +1,10 @@
 package com.join_seminar.twitter.ui.data
 
 
-import com.join_seminar.twitter.ui.data.request.RequestHeart
 import com.join_seminar.twitter.ui.data.response.ResponseHeart
 import com.join_seminar.twitter.ui.data.response.ResponseTwitList
 import com.join_seminar.twitter.ui.data.response.ResponseUserInfoData
+import com.join_seminar.twitter.ui.write.WriteRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -25,8 +25,8 @@ interface ApiService {
     suspend fun twit(
         @Body writeRequest: WriteRequest
     ): WrapperClass<Any>
-    @GET ("/user")
-    fun getUserInfo(): Call<ResponseUserInfoData>
+
+
   
 }
 

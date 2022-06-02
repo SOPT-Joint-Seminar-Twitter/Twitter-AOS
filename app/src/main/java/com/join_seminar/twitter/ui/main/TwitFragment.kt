@@ -16,21 +16,21 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
     private lateinit var twitAdapter: TwitAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        twitLisNetWork()
+        twitListNetWork()
     }
 
-    private fun twitLisNetWork() {
+    private fun twitListNetWork() {
 
         val call: Call<ResponseTwitList> = RetrofitBuilder.customRetrofit.getTwitList()
 
         call.enqueueUtil(
             onSuccess = {
-                val data = it
+                val data = it.data
                 twitAdapter = TwitAdapter()
                 binding.rvTwit.adapter = twitAdapter
 
                 if (data != null) {
-//                    twitAdapter.twitList = data
+                    twitAdapter.twitList = data.toMutableList()
                 }
                 twitAdapter.notifyDataSetChanged()
 

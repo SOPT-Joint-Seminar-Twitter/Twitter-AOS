@@ -9,4 +9,6 @@ interface ApiService {
     suspend fun twit(
         @Body writeRequest: WriteRequest
     ): WrapperClass<Any>
+    @GET ("/user")
+    fun getUserInfo(): Call<ResponseUserInfoData>
 }

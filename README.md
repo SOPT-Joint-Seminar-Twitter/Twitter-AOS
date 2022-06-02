@@ -4,9 +4,19 @@
   <summary><b>gif</b></summary>
 <div markdown="1">
 
+  <br><br>
+
+💫서버통신 완료💫
+<br>
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/69586104/171723397-1649751e-25fd-4780-b91b-677c94e56f29.gif)
+
+<br><br>
+
 |진실(홈)|원용(글쓰기)|혜빈(홈&글쓰기)|
 |---|---|---|
 |![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/69586104/169655780-f58f61c1-1586-42ea-859b-f942cff9114f.gif)|![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/69586104/169655783-907ea9a5-98d9-4d23-9f65-1a6889d1413c.gif)|![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/69586104/169655784-aecc7683-8cd1-4d80-ada6-3cdec628c311.gif)|
+
+
 
 </details>
 </div>
@@ -221,6 +231,20 @@
    ┣ 📂base
      ┣ 📂BaseActivity
      ┗ 📂BaseFragment
+   ┣ 📂data
+     ┣ 📂request
+       ┗ 📂RequestWriteTwit
+     ┣ 📂response
+       ┣ 📂ResponseHeart
+       ┣ 📂ResponseTwitList
+       ┗ 📂ResponseUserInfoData
+     ┣ 📂write
+       ┣ 📂WriteRepository
+       ┗ 📂WriteRequest
+     ┣ 📂ApiService
+     ┣ 📂ResponseType
+     ┣ 📂REtrofitBuilder
+     ┗ 📂WrapperClass
    ┣ 📂main
      ┣ 📂FanccyFragment
      ┣ 📂HomeActivity
@@ -237,12 +261,23 @@
      ┗ 📂WriteViewModel
    ┗ 📂util
      ┗ 📂BindingAdapter
+  ┗📂App
 
 
 🐥Twitter - Develop Branch (혜빈 개발)🐥
   ┣ 📂data
-   ┣ 📂TwitData
-   ┗ 📂WriteData
+   ┣ 📂api
+     ┣ 📂ApiService
+     ┗ 📂ServiceCreator
+   ┣ 📂request
+     ┗ 📂RequestWriteTwit
+   ┗ 📂reponse
+     ┣ 📂ResponseLike
+     ┣ 📂ResponseTwitList
+     ┣ 📂ResponseUserInfoData
+     ┗ 📂ResponseWriteTwit
+    ┣ 📂TwitData
+    ┗ 📂WriteData
   ┣ 📂ui
    ┣ 📂base
      ┣ 📂BaseActivity
@@ -251,6 +286,8 @@
      ┣ 📂adapter
       ┣ 📂HomeTabAdapter
       ┗ 📂TwitAdapter
+     ┣ 📂viewmodel
+      ┗ 📂HomeViewModel
      ┣ 📂HomeActivity
      ┣ 📂InfoFragment
      ┣ 📂MediaFragment
@@ -260,6 +297,8 @@
    ┣ 📂write
      ┣ 📂adapter
       ┗ 📂WriteAdatper
+     ┣ 📂viewmodel
+      ┗ 📂WriteViewModel
      ┗ 📂WriteActivity
    ┗ 📂util
      ┗ 📂BindingAdapter

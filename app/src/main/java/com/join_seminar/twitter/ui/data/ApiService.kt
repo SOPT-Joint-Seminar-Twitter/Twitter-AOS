@@ -4,7 +4,7 @@ package com.join_seminar.twitter.ui.data
 import com.join_seminar.twitter.ui.data.response.ResponseHeart
 import com.join_seminar.twitter.ui.data.response.ResponseTwitList
 import com.join_seminar.twitter.ui.data.response.ResponseUserInfoData
-import com.join_seminar.twitter.ui.data.write.WriteRequest
+import com.join_seminar.twitter.ui.write.WriteRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

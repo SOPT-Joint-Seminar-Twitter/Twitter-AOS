@@ -1,4 +1,4 @@
-package com.join_seminar.twitter.ui.data.write
+package com.join_seminar.twitter.ui.write
 
 data class WriteRequest(
     val content: String,

@@ -1,4 +1,4 @@
-package com.join_seminar.twitter.ui.data.write
+package com.join_seminar.twitter.ui.write
 
 import com.join_seminar.twitter.ui.data.RetrofitBuilder.customRetrofit
 import com.join_seminar.twitter.ui.data.WrapperClass

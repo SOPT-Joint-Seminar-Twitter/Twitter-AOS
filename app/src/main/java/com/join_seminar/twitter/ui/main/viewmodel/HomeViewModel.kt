@@ -63,6 +63,7 @@ class HomeViewModel() : ViewModel() {
     }
 
     //좋아요 서버통신
+
     fun postLike(type: String) {
         viewModelScope.launch {
             kotlin.runCatching { ServiceCreator.apiService.postLike(type) }
@@ -76,5 +77,6 @@ class HomeViewModel() : ViewModel() {
                 }
         }
     }
+
 
 }

@@ -1,5 +1,6 @@
 package com.join_seminar.twitter.ui.main.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,16 +9,23 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.join_seminar.twitter.data.TwitData
 import com.join_seminar.twitter.data.api.ApiService
+import com.join_seminar.twitter.data.api.ServiceCreator
 import com.join_seminar.twitter.data.response.ResponseTwitList
 import com.join_seminar.twitter.databinding.ItemTwitListBinding
+import com.join_seminar.twitter.ui.main.TwitFragment
 import com.join_seminar.twitter.ui.main.viewmodel.HomeViewModel
 
 class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
     var twitList = mutableListOf<ResponseTwitList.Data>()
 
+    interface ItemClickListener {
+        fun onClick(view: View, position: Int)
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TwitViewHolder {
-        val binding = ItemTwitListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            ItemTwitListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TwitViewHolder(binding)
     }
 
@@ -31,15 +39,16 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
     override fun getItemCount(): Int = twitList.size
 
 
-
-    class TwitViewHolder(val binding : ItemTwitListBinding) : RecyclerView.ViewHolder(binding.root){
+    class TwitViewHolder(val binding: ItemTwitListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseTwitList.Data) {
             binding.apply {
                 twit = data
                 executePendingBindings()
             }
+
         }
     }
+
 
     fun setQuestionPost(data: MutableList<ResponseTwitList.Data>) {
         this.twitList = data
@@ -47,13 +56,11 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     }
 
-    interface ItemClickListener {
-        fun onClick(view: View, position: Int)
-    }
+
 
     private lateinit var itemClickListener: ItemClickListener
 
     fun setItemClickListener(itemClickListener: Any) {
-        //this.itemClickListener = itemClickListener
+        this.itemClickListener = itemClickListener as ItemClickListener
     }
 }

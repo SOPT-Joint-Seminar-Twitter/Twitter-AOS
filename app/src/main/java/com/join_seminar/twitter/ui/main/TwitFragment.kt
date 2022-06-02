@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.join_seminar.twitter.R
+import com.join_seminar.twitter.data.response.ResponseLike
 import com.join_seminar.twitter.data.response.ResponseTwitList
 import com.join_seminar.twitter.databinding.FragmentTwitBinding
 import com.join_seminar.twitter.ui.main.adapter.TwitAdapter
@@ -38,14 +39,32 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
                 val twitData = homeViewModel.twitData.value
 
                 override fun onClick(view: View, position: Int) {
-                    val postId = twitData?.get(position)?._id
-                    if (postId != null) {
-                        homeViewModel.postLike(postId)
-                        homeViewModel.twitLike.observe(viewLifecycleOwner) {
+                    val postId = twitData?.get(position)!!._id
 
-                        }
+                    //homeViewModel.postLike(postId)
+                    homeViewModel.twitLike.observe(viewLifecycleOwner) {
+
                     }
                 }
             })
     }
+
+    fun deleteMember(member: ResponseLike) {
+        twitAdapter = TwitAdapter()
+        twitAdapter.setItemClickListener(
+            object : TwitAdapter.ItemClickListener {
+                val twitData = homeViewModel.twitData.value
+
+                override fun onClick(view: View, position: Int) {
+                    val postId = twitData?.get(position)!!._id
+
+                    //homeViewModel.postLike(postId)
+                    homeViewModel.twitLike.observe(viewLifecycleOwner) {
+
+                    }
+                }
+            })
+        twitAdapter?.notifyDataSetChanged()
+    }
+
 }

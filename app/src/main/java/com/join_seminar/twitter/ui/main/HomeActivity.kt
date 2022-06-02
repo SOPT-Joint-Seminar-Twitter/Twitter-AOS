@@ -62,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun userInfoNetwork(){
-        val call: Call<ResponseUserInfoData> = RetrofitBuilder.customRetrofit.getUserInfo("먀막")
+        val call: Call<ResponseUserInfoData> = RetrofitBuilder.customRetrofit.getUserInfo()
 
         call.enqueueUtil(
             onSuccess = {

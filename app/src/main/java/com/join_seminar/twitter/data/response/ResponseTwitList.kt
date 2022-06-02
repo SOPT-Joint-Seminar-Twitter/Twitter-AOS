@@ -15,7 +15,12 @@ data class ResponseTwitList(
         val writer: Writer
     ) {
         data class Writer(
+            val __v: Int,
             val _id: String,
+            val createdAt: String,
+            val introduce: String,
+            val updatedAt: String,
+            val userId: String,
             val userName: String
         )
     }

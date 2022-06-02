@@ -1,13 +1,14 @@
 package com.join_seminar.twitter.ui.data
 
-import com.join_seminar.twitter.ui.data.response.ResponseUserInfoData
-import retrofit2.Call
-import retrofit2.http.GET
+import com.join_seminar.twitter.ui.data.write.WriteRequest
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface ApiService {
+    @POST("/twit")
+    suspend fun twit(
+        @Body writeRequest: WriteRequest
+    ): WrapperClass<Any>
     @GET ("/user")
     fun getUserInfo(): Call<ResponseUserInfoData>
-
-
 }
-

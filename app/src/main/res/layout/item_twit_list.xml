@@ -121,13 +121,13 @@
 
         <ImageView
             android:id="@+id/iv_item_retwit"
+            twitCheckIcon="@{twit.isRetwit}"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginStart="58dp"
             android:background="@drawable/retwit_gray_to_green"
-            twitCheckIcon="@{twit.isRetwit}"
-            android:layout_marginStart="42dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_item_reply"
-            app:layout_constraintStart_toStartOf="@+id/iv_item_reply"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_reply_num"
             app:layout_constraintTop_toTopOf="@+id/iv_item_reply" />
 
         <TextView

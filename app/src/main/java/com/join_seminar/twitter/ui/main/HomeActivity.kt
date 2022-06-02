@@ -1,5 +1,6 @@
 package com.join_seminar.twitter.ui.main
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -73,6 +74,5 @@ class HomeActivity : AppCompatActivity() {
                 Log.d("userInfoNetwork", "서버 통신 실패")
             }
         )
-
     }
 }

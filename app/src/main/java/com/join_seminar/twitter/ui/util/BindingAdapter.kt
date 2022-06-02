@@ -49,4 +49,7 @@ object BindingAdapter {
     fun twitCheckText(textView: TextView, twit: Boolean) {
         textView.isSelected = twit
     }
+
+
+    //likeCount int -> String 으로 바꿔줘야하는 걸 여기에다가 하는건지
 }

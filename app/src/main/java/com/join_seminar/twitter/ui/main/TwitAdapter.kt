@@ -13,12 +13,18 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
 
     private lateinit var mlistener : onItemClickListener
 
-    interface onItemClickListener{
-        fun onItemClick(likeNum: Int,isLike : Boolean)
+    interface onItemClickListener {
+        fun onItemClick(user: String, position: Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener){
+    fun setOnItemClickListener(listener: onItemClickListener) {
         mlistener = listener
+    }
+
+    fun plus(count: Int, like: Boolean, position: Int) {
+        twitList[position].isRetwit = like
+        twitList[position].likeCount = count
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TwitViewHolder {
@@ -43,16 +49,11 @@ class TwitAdapter : RecyclerView.Adapter<TwitAdapter.TwitViewHolder>() {
                 }
         }
 
-        val like = binding.ivItemHeart
+        val retwit = binding.ivItemRetwit
 
-
-        init{
-            like.setOnClickListener{
-
-                val likeNum =binding.twit.likeCount
-                val isLike=binding.twit.isRetwit
-
-                listener.onItemClick(likeNum,isLike )
+        init {
+            retwit.setOnClickListener {
+                listener.onItemClick(binding.twit!!._id,adapterPosition)
             }
         }
 

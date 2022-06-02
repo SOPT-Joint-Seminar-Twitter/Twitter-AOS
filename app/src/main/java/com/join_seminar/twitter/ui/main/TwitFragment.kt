@@ -18,6 +18,11 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
     private lateinit var twitAdapter: TwitAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        twitAdapter = TwitAdapter()
+        binding.rvTwit.adapter = twitAdapter
+
+        heartNetwork()
         twitListNetWork()
     }
 
@@ -28,9 +33,6 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
         call.enqueueUtil(
             onSuccess = {
                 val data = it.data
-                twitAdapter = TwitAdapter()
-                binding.rvTwit.adapter = twitAdapter
-
                 if (data != null) {
                     twitAdapter.twitList = data.toMutableList()
                 }
@@ -58,34 +60,22 @@ class TwitFragment : BaseFragment<FragmentTwitBinding>(R.layout.fragment_twit) {
     }
 
     private fun heartNetwork(){
-//        val requestHeart = RequestHeart(
-//            postId =
-//        )
-//
-//        val call: Call<ResponseHeart> = RetrofitBuilder.customRetrofit.postHeart(requestHeart)
-//
-//        call.enqueueUtil(
-//            onSuccess = {
-//                val data = it.data
-//                //좋아요 수랑 true/false 값
-//                twitAdapter = TwitAdapter()
-//                binding.rvTwit.adapter = twitAdapter
-//                twitAdapter.setOnItemClickListener(object : TwitAdapter.onItemClickListener{
-//                    override fun onItemClick(likeNum: Int,isLike : Boolean) {
-//
-//                    }
-//                })
-//
-//
-//                Log.d("heartNetwork", "좋아요 통신 성공")
-//
-//            },
-//            onError = {
-//                Log.d("heartNetwork", "좋아요 통신 실패")
-//
-//            }
-//        )
 
+        twitAdapter.setOnItemClickListener(object : TwitAdapter.onItemClickListener {
+            override fun onItemClick(user: String,position:Int) {
+                val call: Call<ResponseHeart> = RetrofitBuilder.customRetrofit.postHeart(user)
+                call.enqueueUtil(
+                    onSuccess = {
+                        Log.d("heartNetwork", "${it.data} 좋아요 통신 성공")
+                        twitAdapter.plus(it.data.likeCount,it.data.isLike,position)
+                    },
+                    onError = {
+                        Log.d("heartNetwork", "좋아요 통신 실패")
+
+                    }
+                )
+            }
+        })
 
     }
 }

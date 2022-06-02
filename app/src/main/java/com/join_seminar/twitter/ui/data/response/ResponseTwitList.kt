@@ -9,9 +9,9 @@ data class ResponseTwitList(
     data class Data(
         val _id: String,
         val content: String,
-        val isLike: Boolean,
-        val isRetwit: Boolean,
-        val likeCount: Int,
+        var isLike: Boolean,
+        var isRetwit: Boolean,
+        var likeCount: Int,
         val writer: Writer
     ) {
         data class Writer(
